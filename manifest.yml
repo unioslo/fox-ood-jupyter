@@ -1,0 +1,28 @@
+---
+name: Jupyter (BETA)
+category: Interactive Apps
+subcategory: Jupyter
+role: batch_connect
+description: |
+        This app will launch Jupyter on Fox.<br><br>
+
+        You can select one of the system installed versions of Jupyter, create a conda/python environment and install your own, or use a shared environement from your project.
+
+        If you choose to run your own, <a href="/pun/sys/shell/ssh/fox.educloud.no" target=_blank>open a terminal</a> and follow this procedure:
+
+        Python virtualenv:<br>
+        `module load Python/ve.rs.ion`<br>
+        `python -m venv my_jupyter_venv`<br>
+        `pip install jupyterlab`<br>
+
+        Conda:<br>
+        `module --latest load Miniconda3`<br>
+        `conda create -p my_jupyter_conda_env jupyterlab`<br>
+
+        Read <a href="https://www.uio.no/english/services/it/research/platforms/edu-research/help/fox/installing-software-python.md" target=_blank>the documentation</a> for more information about using Python on Fox
+
+        <hr>
+        <b>Choose job options:</b>
+
+tile:
+  sub_caption: "Notebook and Lab"
