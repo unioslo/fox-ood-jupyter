@@ -43,7 +43,6 @@ export JUPYTERLAB_SETTINGS_DIR=${HOME}/.jupyter/lab/user-settings/
   <%- case context.jupyter_version -%>
     <%- when 'venv' -%>
       module load <%= context.auto_modules_Python %>
-      python -m venv <%= context.env_path %>
       source <%= context.env_path %>/bin/activate
     <%- when 'conda' -%>
       module --latest load Miniconda3
