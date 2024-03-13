@@ -12,7 +12,7 @@ script:
                 <%- when 'A100' -%>
                   "--partition=accel",
                   "--gres=gpu:a100:<%= ec_gpus.to_i %>",
-                <% when 'MIG' -%>
+                <%- when 'MIG' -%>
                   "--partition=accel",
                   "-G 1",
                 <%- else -%>
