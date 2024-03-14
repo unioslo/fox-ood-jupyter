@@ -14,7 +14,7 @@ script:
                   "--gres=gpu:a100:<%= ec_gpus.to_i %>",
                 <%- when 'MIG' -%>
                   "--partition=mig",
-                  "-G 1",
+                  "-G", "<%= ec_gpus.to_i %>",
                 <%- else -%>
                   "--partition=accel",
                   "-G", "<%= ec_gpus.to_i %>",
