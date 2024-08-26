@@ -45,8 +45,8 @@ attributes:
     value: "0"
     html_options:
       data:
-        hide-ec-modulepath-when-checked: true
-        hide-ec-modules-when-checked: true
+        hide-ec-modulepath-when-checked: false
+        hide-ec-modules-when-checked: false
 
   auto_modules_JupyterLab:
     label: "Choose Jupyter module (required)"
@@ -99,16 +99,19 @@ attributes:
     required: true
 
   ec_modulepath:
-          label: "Additional module path (optional)"
-          help: |
+    label: "Additional module path (optional)"
+    widget: "text_field"
+    help: |
                   <small>Add your own EasyBuild modulepath (optional)</small>
   ec_modules:
     label: "Additional modules (optional)"
+    widget: "text_field"
     help: |
         <small>Space separated list of additional modules to load (optional)</small></br/>
 
   ec_extra_jupyter_args:
     label: "Additional Jupyter arguments (optional)"
+    widget: "text_field"
     help: |
       <small>Add extra command line arguments</small>
 
