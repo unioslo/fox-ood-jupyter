@@ -3,9 +3,8 @@ cluster: "fox"
 
 form:
   - auto_accounts
-  - ec_alacarte
   - bc_num_hours
-  - jupyter_variant
+  - global_fox_alacarte
   - jupyter_install
   - auto_modules_JupyterLab
   - jupyter_envtype
@@ -18,10 +17,9 @@ form:
   - ec_cpus
   - ec_mem
   - ec_gpus
+  - global_fox_gpugres
 
 attributes:
-
-<%= FormTemplate.fox_alacarte %>
 
   bc_num_hours:
     label: "Runtime (in hours)"
@@ -30,15 +28,6 @@ attributes:
     widget: "hidden_field"
     value: "notset"
 
-  jupyter_variant:
-    label: "Select Jupyter variant:"
-    widget: "radio_button"
-    value: "1"
-    options:
-      - ["Jupyter Lab", "1"]
-      - ["Jupyter Notebook", "0"]
-
-
   jupyter_install:
     label: "Use self-installed Jupyter"
     widget: "check_box"
@@ -46,7 +35,11 @@ attributes:
     html_options:
       data:
         hide-ec-modulepath-when-checked: false
-        hide-ec-modules-when-checked: false
+        hide-ec-modules-when-checked: true
+        hide-auto-modules-Python-when-un-checked: true
+        hide-auto-modules-JupyterLab-when-checked: true
+        hide-jupyter-envtype-when-un-checked: true
+        hide-env-path-when-un-checked: true
 
   auto_modules_JupyterLab:
     label: "Choose Jupyter module (required)"
@@ -64,6 +57,7 @@ attributes:
       - [ 
           "Conda environment", "1",
           data-set-jupyter-version: "conda",
+          data-hide-auto-modules-Python: true
         ]
 
   auto_modules_Python:
