@@ -12,7 +12,7 @@ form:
   - env_path
   - ec_modulepath
   - ec_modules
-  - jupyter_version
+  - jupyter_selfinstall
   - ec_extra_jupyter_args
   - ec_cpus
   - ec_mem
@@ -31,7 +31,7 @@ attributes:
   jupyter_install:
     label: "Use self-installed Jupyter"
     widget: "check_box"
-    value: "0"
+    value: false
     html_options:
       data:
         hide-ec-modulepath-when-checked: false
