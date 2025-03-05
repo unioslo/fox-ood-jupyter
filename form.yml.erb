@@ -66,19 +66,21 @@ attributes:
     data-hide-env-path: true
 
   env_path:
-    widget: "text_field"
+    widget: "path_selector"
+    show_files: false
     label: "Environment path: (required)"
-    help: |
-      <small>The path is relative to your $HOME. E.g use `my-environment` for $HOME/my-environment or `/fp/projects01/ec01/jupyter/my-environemnt` to use a shared install</small>
 
   auto_accounts:
     label: "Choose the Educloud project to run under:"
     help: |
      <small>If you are unsure, ask the project principal</small>
+  bc_cpus:
+    widget: "hidden_field"
 
   ec_cpus:
     label: "Number of CPU cores:"
     widget: "number_field"
+    data-set-bc-cpus: "123"
     required: true
 
   ec_gpus:
