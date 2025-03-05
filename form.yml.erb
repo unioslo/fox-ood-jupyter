@@ -17,6 +17,7 @@ form:
   - ec_mem
   - ec_gpus
   - global_fox_gpugres
+  - jupyter_version
 
 attributes:
 
@@ -50,11 +51,11 @@ attributes:
     value: "0"
     options:
       - [ 
-          "Python virtualenv", "0",
+          "Python virtualenv", "1",
           data-set-jupyter-version: "venv",
         ]
       - [ 
-          "Conda environment", "1",
+          "Conda environment", "2",
           data-set-jupyter-version: "conda",
           data-hide-auto-modules-Python: true
         ]
