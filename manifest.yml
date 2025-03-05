@@ -13,6 +13,7 @@ description: |
         Python virtualenv:<br>
         `module load Python/ve.rs.ion`<br>
         `python -m venv my_jupyter_venv`<br>
+        `source my_jupyter_venv/bin/activate`<br>
         `pip install jupyterlab`<br>
 
         Conda:<br>
