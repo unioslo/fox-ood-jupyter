@@ -35,10 +35,10 @@ attributes:
     value: false
     html_options:
       data:
-        hide-ec-modulepath-when-checked: false
         hide-ec-modules-when-checked: true
         hide-auto-modules-Python-when-un-checked: true
         hide-auto-modules-JupyterLab-when-checked: true
+        set-auto-modules-JupyterLab-when-checked: false
         hide-jupyter-envtype-when-un-checked: true
         hide-env-path-when-un-checked: true
 
@@ -81,7 +81,6 @@ attributes:
   ec_cpus:
     label: "Number of CPU cores:"
     widget: "number_field"
-    data-set-bc-cpus: "123"
     required: true
 
   ec_gpus:
