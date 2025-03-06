@@ -34,7 +34,7 @@ set -x
 
 export JUPYTERLAB_SETTINGS_DIR=${HOME}/.jupyter/lab/user-settings/
 
-<%- if context.jupyter_install == 1 -%>
+<%- if context.jupyter_install.to_i == 1 -%>
   <%- case context.jupyter_version -%>
     <%- when 'venv' -%>
       module load <%= context.auto_modules_python %>
