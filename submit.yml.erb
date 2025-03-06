@@ -6,7 +6,7 @@ script:
   native: [
             "-c", "<%= ec_cpus.blank?  ? 1 : ec_cpus.to_i %>",
            <%- if ec_gpus.to_i > 0 -%>
-              <%- case ec_alacarte -%>
+              <%- case global_fox_alacarte -%>
                 <%- when 'RTX30' -%>
                   "--partition=accel",
                   "--gres=gpu:rtx30:<%= ec_gpus.to_i %>",
@@ -32,7 +32,7 @@ script:
                   "-G", "<%= ec_gpus.to_i %>",
                 <%- else -%>
                   "--partition=accel",
-                  "-G", "<%= ec_gpus.to_i %>",
+                  "--gres=gpu:<%= global_fox_gpugres %>:<%= ec_gpus.to_i %>",
                 <%- end -%>
 
             <%- else -%>
