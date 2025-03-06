@@ -52,7 +52,7 @@ c.ServerApp.password = u'sha1:${SALT}:${PASSWORD_SHA1}'
 c.ServerApp.base_url = '/node/${host}/${port}/'
 c.ServerApp.open_browser = False
 c.ServerApp.allow_origin = '*'
-c.ServerApp.notebook_dir = '${HOME}'
+c.ServerApp.root_dir= '${HOME}'
 c.ServerApp.disable_check_xsrf = True
 EOL
 )
