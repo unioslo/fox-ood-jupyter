@@ -3,9 +3,8 @@ cluster: "fox"
 
 form:
   - auto_accounts
-  - ec_alacarte
   - bc_num_hours
-  - jupyter_variant
+  - global_fox_alacarte
   - jupyter_install
   - auto_modules_JupyterLab
   - jupyter_envtype
@@ -13,40 +12,35 @@ form:
   - env_path
   - ec_modulepath
   - ec_modules
-  - jupyter_version
   - ec_extra_jupyter_args
   - ec_cpus
   - ec_mem
   - ec_gpus
+  - global_fox_gpugres
+  - jupyter_version
 
 attributes:
-
-<%= FormTemplate.fox_alacarte %>
 
   bc_num_hours:
     label: "Runtime (in hours)"
 
   jupyter_version:
     widget: "hidden_field"
-    value: "notset"
-
-  jupyter_variant:
-    label: "Select Jupyter variant:"
-    widget: "radio_button"
-    value: "1"
-    options:
-      - ["Jupyter Lab", "1"]
-      - ["Jupyter Notebook", "0"]
-
+    cacheable: false
+    value: false
 
   jupyter_install:
     label: "Use self-installed Jupyter"
     widget: "check_box"
-    value: "0"
+    value: false
     html_options:
       data:
-        hide-ec-modulepath-when-checked: false
-        hide-ec-modules-when-checked: false
+        hide-ec-modules-when-checked: true
+        hide-auto-modules-Python-when-un-checked: true
+        hide-auto-modules-JupyterLab-when-checked: true
+        set-auto-modules-JupyterLab-when-checked: false
+        hide-jupyter-envtype-when-un-checked: true
+        hide-env-path-when-un-checked: true
 
   auto_modules_JupyterLab:
     label: "Choose Jupyter module (required)"
@@ -58,12 +52,13 @@ attributes:
     value: "0"
     options:
       - [ 
-          "Python virtualenv", "0",
+          "Python virtualenv", "1",
           data-set-jupyter-version: "venv",
         ]
       - [ 
-          "Conda environment", "1",
+          "Conda environment", "2",
           data-set-jupyter-version: "conda",
+          data-hide-auto-modules-Python: true
         ]
 
   auto_modules_Python:
@@ -72,10 +67,9 @@ attributes:
     data-hide-env-path: true
 
   env_path:
-    widget: "text_field"
+    widget: "path_selector"
+    show_files: false
     label: "Environment path: (required)"
-    help: |
-      <small>The path is relative to your $HOME. E.g use `my-environment` for $HOME/my-environment or `/fp/projects01/ec01/jupyter/my-environemnt` to use a shared install</small>
 
   auto_accounts:
     label: "Choose the Educloud project to run under:"
