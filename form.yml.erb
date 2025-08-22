@@ -2,6 +2,7 @@
 cluster: "fox"
 
 form:
+  - ec_mail_on_start
   - auto_accounts
   - bc_num_hours
   - global_fox_alacarte
@@ -23,6 +24,13 @@ attributes:
 
   bc_num_hours:
     label: "Runtime (in hours)"
+
+  ec_mail_on_start:
+    label: "Send e-mail when session starts"
+    widget: "check_box"
+    value: "false"
+    help: |
+      <small>Using the e-mail your account is registered to</small>
 
   jupyter_version:
     widget: "hidden_field"
